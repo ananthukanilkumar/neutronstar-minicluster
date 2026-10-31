@@ -1,5 +1,7 @@
 import numpy as np
 import agama
+agama.setUnits(length=1, velocity=1, mass=1) #kpc,km/s, Solar mass
+
 class Minicluster:
     def __init__(self, mass, delta, concentration):
         self.mass          = mass
@@ -11,9 +13,8 @@ class Minicluster:
         self.radius_char = self.radius_char()
         self.density_char = self.density_char()
 
-
     def _density(self):
-        return 2.4e6 * self.delta**3 * (1 + self.delta) * 3e7  #1Gev/cm3=3.10^7 Msun/kpc3
+        return 2.4e6 * self.delta**3 * (1 + self.delta) * 2.6e7  #1Gev/cm3=3.10^7 Msun/kpc3
 
     def _radius(self):
         return (3 * self.mass / (4 * np.pi * self.density)) ** (1/3)

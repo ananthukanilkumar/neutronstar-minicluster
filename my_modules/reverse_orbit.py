@@ -1,7 +1,7 @@
 from operator import pos
 
-import numpy as np, agama
-
+import numpy as np
+import agama
 agama.setUnits(length=1, velocity=1, mass=1) #kpc,km/s, Solar mass
 
 def reverse_orbit(ic,pot,time,timestart,show_start=False):
